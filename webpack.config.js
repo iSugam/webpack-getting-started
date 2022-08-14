@@ -19,6 +19,20 @@ module.exports = {
                     "css-loader" // For all the css styles
                 ],
             },
+            {
+                test: /\.html$/,
+                use: ["html-loader"]
+            },
+            {
+                test: /\.(svg|png|jpg|gif)$/,
+                use: {
+                    loader: "file-loader",
+                    options: {
+                        name: "[name].[contenthash].[ext]",
+                        outputPath: "images"
+                    }
+                }
+            }
         ]
         
     }
