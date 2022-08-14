@@ -1,7 +1,8 @@
 const path = require("path");
-const config = require("./webpack.config")
-const { merge } = require("webpack-merge")
-const { CleanWebpackPlugin } = require("clean-webpack-plugin")
+const config = require("./webpack.config");
+const { merge } = require("webpack-merge");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 // Merge it with webpack.config.js
 module.exports = merge (config, {
@@ -11,5 +12,16 @@ module.exports = merge (config, {
         path: path.resolve(__dirname, "dist"),
         assetModuleFilename: 'images/[name].[hash][ext]' // Adding hash values to image names
     },
-    plugins: [new CleanWebpackPlugin()] // For creating new dist or removing duplicate files fron dist
+    plugins: [new MiniCssExtractPlugin({filename: "styles.[contenthash].css"}), new CleanWebpackPlugin()], // For creating new dist or removing duplicate files fron dist
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: [
+                    MiniCssExtractPlugin.loader, // Extract CSS into its own file
+                    "css-loader" // For all the css styles
+                ],
+            },
+        ]
+    }
 })
