@@ -11,6 +11,11 @@ submit.addEventListener("click", () => {
     document.querySelectorAll("label").forEach(label => {
         label.style.color = colorInput.value
     });
+
+    document.querySelectorAll("p").forEach(label => {
+        label.style.color = colorInput.value
+    });
+
     document.getElementById("back-code").innerText = backgroundColorInput.value.toUpperCase();
     document.getElementById("text-code").innerText = colorInput.value.toUpperCase();
 })
