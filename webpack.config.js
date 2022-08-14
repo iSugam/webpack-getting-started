@@ -6,7 +6,7 @@ module.exports = {
 
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./src/template.html" // for build the html template
+            template: "./src/template.html" // To build the html template
         })
     ],
 
@@ -21,18 +21,12 @@ module.exports = {
             },
             {
                 test: /\.html$/,
-                use: ["html-loader"]
+                use: ["html-loader"] // Html loader for loading file source
             },
             {
-                test: /\.(svg|png|jpg|gif)$/,
-                use: {
-                    loader: "file-loader",
-                    options: {
-                        name: "[name].[contenthash].[ext]",
-                        outputPath: "images"
-                    }
-                }
-            }
+                test: /\.(png|svg|jpg|jpeg|gif)$/, // Images format
+                type: 'asset/resource', // To create a seperate file and export the src/url of the file
+            },
         ]
         
     }
