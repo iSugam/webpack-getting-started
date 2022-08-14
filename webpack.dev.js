@@ -8,5 +8,16 @@ module.exports = merge(config, {
     output: {
         filename: "main.js",
         path: path.resolve(__dirname, "dist")
+    },
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: [
+                    "style-loader", // To put css files inside <style></style> element
+                    "css-loader" // For all the css styles
+                ],
+            },
+        ]
     }
 })
