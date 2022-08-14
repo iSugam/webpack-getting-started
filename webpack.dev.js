@@ -19,5 +19,8 @@ module.exports = merge(config, {
                 ],
             },
         ]
+    },
+    devServer: {
+        port: 3000 // To use custom port on localhost
     }
 })
