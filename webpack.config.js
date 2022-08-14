@@ -6,7 +6,7 @@ module.exports = {
 
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./src/template.html"
+            template: "./src/template.html" // for build the html template
         })
     ],
 
@@ -15,8 +15,8 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-                    "style-loader", 
-                    "css-loader"
+                    "style-loader", // To put css files inside <style></style> element
+                    "css-loader" // For all the css styles
                 ],
             },
         ]
