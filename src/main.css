@@ -1,5 +1,5 @@
 body {
-    background-color: blueviolet;
+    background-color: #403947;
     margin: 0;
     padding: 0;
     display: flex;
@@ -7,6 +7,7 @@ body {
     justify-content: center;
     height: 100vh;
     flex-direction: column;
+    color: #fff;
 }
 
 img {
@@ -32,4 +33,20 @@ input {
 button {
     padding: .5rem 1rem;
     cursor: pointer;
+}
+
+.color-codes {
+    margin-top: 30px;
+}
+
+p {
+    margin: 20px;
+}
+
+p span {
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    padding: 4px 16px;
+    float: right;
+    margin-left: 20px;
 }
