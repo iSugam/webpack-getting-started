@@ -1,3 +1,31 @@
 body {
     background-color: blueviolet;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+h1 {
+    color: #fff;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+input {
+    cursor: pointer;
+}
+
+button {
+    padding: .5rem 1rem;
+    cursor: pointer;
 }
