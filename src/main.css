@@ -9,6 +9,10 @@ body {
     flex-direction: column;
 }
 
+img {
+    width: 50px;
+}
+
 h1 {
     color: #fff;
 }
